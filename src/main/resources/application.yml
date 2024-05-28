@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: payment-api
+  datasource:
+    url: jdbc:postgresql://postgres:5432/payment
+    username: root
+    password: secret
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    schemas: payment
+
+  docker:
+    compose:
+      enabled: true
+
+api:
+  security:
+    token:
+      secret: payment-api-secret-key
